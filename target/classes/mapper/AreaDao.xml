@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace标识了AreaDao.xml这个文件里面的方法和下面的queryDao对应-->
+<mapper namespace="com.imooc.o2o.dao.AreaDao">
+    <select id="queryArea" resultType="com.imooc.o2o.entity.Area">
+        select
+            area_id,area_name,priority,create_time,last_edit_time
+        from
+            tb_area
+        order by
+            priority
+        desc
+    </select>
+
+</mapper>

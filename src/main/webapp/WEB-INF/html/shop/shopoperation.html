@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--Meta用于描述HTML文档的属性，比如作者、日期、时间、网页描述、关键词、页面刷新等-->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SUI Mobile Demo</title>
+    <meta name="description" content="MSUI: Build mobile apps with simple HTML, CSS, and JS components.">
+    <meta name="author" content="阿里巴巴国际UED前端">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href="/index.ico">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- Google Web Fonts -->
+    <!--链接到外部样式文件，可能使得html中标签中的样式发生改变。-->
+    <!--链接的网上的css文件-->
+    <!--当通过网址链接js文件进来报错的时候，mac可以使用option+Enter下载此文件-->
+    <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
+    <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm-extend.min.css">
+
+<!--    <link rel="apple-touch-icon-precomposed" href="/assets/img/apple-touch-icon-114x114.png">-->
+
+    <script>
+        //ga
+    </script>
+
+
+    <script>
+        var _hmt = _hmt || [];
+        <!--两个括号，第一个把方法包起来，表示这个方法立即执行-->
+        (function() {
+            <!--创建一个script标签-->
+            var hm = document.createElement("script");
+            <!--给script添加一个属性-->
+            hm.src = "//hm.baidu.com/hm.js?ba76f8230db5f616edc89ce066670710";
+            <!--获得第1个即上面的那个script标签-->
+            var s = document.getElementsByTagName("script")[0];
+            <!--在第一个script之前插入这个标签，那么这个script就变成了第一个标签-->
+            s.parentNode.insertBefore(hm, s);
+        })();<!--两个括号，第一个把方法包起来，立即执行-->
+    </script>
+
+</head>
+<body>
+<!--div用于定义文档中的分区或节-->
+<div class="page-group">
+    <div id="page-label-input" class="page">
+
+        <!--<header> 标签定义文档的页眉（介绍信息）。-->
+        <header class="bar bar-nav">
+            <a class="button button-link button-nav pull-left back" href="/demos/form">
+                <span class="icon icon-left"></span>
+                返回
+            </a>
+            <h1 class="title">商店信息</h1>
+        </header>
+        <div class="content">
+            <div class="list-block">
+                <ul>
+                    <!-- 商铺名称 text -->
+                    <li>
+                        <div class="item-content">
+                            <div class="item-inner">
+                                <div class="item-title label">商铺名称</div>
+                                <div class="item-input">
+                                    <input type="text" id="shop-name" placeholder="请填写商铺名称">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- 商铺分类  下拉列表 -->
+                    <li>
+                        <div class="item-content">
+                            <div class="item-inner">
+                                <div class="item-title label">商铺分类</div>
+                                <div class="item-input">
+                                    <!--select 元素可创建单选或多选菜单。-->
+                                    <select id = "shop-category">
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- 区域分类  下拉列表 -->
+                    <li>
+                        <div class="item-content">
+                            <div class="item-inner">
+                                <div class="item-title label">所属区域</div>
+                                <div class="item-input">
+
+                                    <select id = "area">
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- 详细地址  text -->
+                    <li>
+                        <div class="item-content">
+                            <div class="item-inner">
+                                <div class="item-title label">详细地址</div>
+                                <div class="item-input">
+                                    <input type="text" id="shop-addr" placeholder="请填写详细地址">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- 联系电话  text -->
+                    <li>
+                        <div class="item-content">
+                            <div class="item-inner">
+                                <div class="item-title label">联系电话</div>
+                                <div class="item-input">
+                                    <input type="text" id="shop-phone" placeholder="请填写联系电话">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- 缩略图    上传控件-->
+                    <li>
+                        <div class="item-content">
+                            <div class="item-inner">
+                                <div class="item-title label">缩略图</div>
+                                <div class="item-input">
+                                    <input type="file" id="shop-img" >
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- 店铺简介   textarea -->
+                    <li class="align-top">
+                        <div class="item-content">
+                            <div class="item-inner">
+                                <div class="item-title label">店铺简介</div>
+                                <div class="item-input">
+                                    <textarea id="shop-desc" placeholder="请填写店铺简介"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- 验证码   kaptcha控件,可以通过验证码防止重复提交 -->
+                    <li>
+                        <div class="item-content">
+                            <div class="item-inner">
+                                <div class="item-title label">验证码</div>
+                                <input type="text" id="j_captcha" placeholder="验证码">
+                                <div class="item-input">
+                                    <!-- img标签的src属性指定从哪个servlet获取资源 -->
+                                    <!--下面的Kaptcha用于制定验证码的Servlet-->
+                                    <img  id="captcha_img" alt="点击更换" title="点击更换"
+                                          onclick="changeVerifyCode(this)" src="../Kaptcha"/>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="content-block">
+                <div class="row">
+                    <div class="col-50"><a href="#" class="button button-big button-fill button-danger">返回</a></div>
+                    <div class="col-50"><a href="#" class="button button-big button-fill button-success" id="submit">提交</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--当通过网址链接js文件进来报错的时候，可以使用option+Enter下载此文件-->
+<script type="text/javascript" src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+<script type='text/javascript' src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm-extend.min.js' charset='utf-8'></script>
+<script type="text/javascript" src="//cdn.bootcss.com/jquery-toast-plugin/1.3.2/jquery.toast.min.js"></script>
+
+
+<script type='text/javascript' src='../resources/js/shop/shopoperation.js' charset='utf-8'></script>
+<script type='text/javascript' src='../resources/js/common/common.js' charset='utf-8'></script>
+
+
+
+
+</body>
+</html>
